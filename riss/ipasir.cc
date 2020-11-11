@@ -194,6 +194,14 @@ void ipasir_set_learn(void * solver, void * state, int max_length, void (*learn)
     riss_set_learn_callback(solver, state, max_length, learn);
 }
 
+/** apply unit propagation (find units, not shrink clauses) and remove satisfied (learned) clauses from solver
+ * @return 1, if simplification did not reveal an empty clause, 0 if an empty clause was found (or inconsistency by unit propagation)
+ */
+int ipasir_simplify(void * solver)
+{
+    riss_simplify(solver);
+}
+
 #ifdef __cplusplus
 }
 #endif

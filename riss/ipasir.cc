@@ -125,6 +125,11 @@ int ipasir_solve(void * solver)
     return riss_sat(solver);
 }
 
+int ipasir_solve_limited(void * solver, const int64_t nOfConflicts)
+{
+    return riss_sat_limited(solver, nOfConflicts);
+}
+
 /**
  * Get the truth value of the given literal in the found satisfying
  * assignment. Return 'lit' if True, '-lit' if False, and 0 if not important.
@@ -199,7 +204,7 @@ void ipasir_set_learn(void * solver, void * state, int max_length, void (*learn)
  */
 int ipasir_simplify(void * solver)
 {
-    riss_simplify(solver);
+    return riss_simplify(solver);
 }
 
 #ifdef __cplusplus

@@ -8,6 +8,8 @@
 extern "C" {
 #endif
 
+#include "stdint.h"
+
 /**
  * Return the name and the version of the incremental SAT
  * solving library.
@@ -72,6 +74,7 @@ void ipasir_assume(void * solver, int lit);
  * State after: INPUT or SAT or UNSAT
  */
 int ipasir_solve(void * solver);
+int ipasir_solve_limited(void * solver, const int64_t nOfConflicts);
 
 /**
  * Get the truth value of the given literal in the found satisfying

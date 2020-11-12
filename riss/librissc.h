@@ -159,6 +159,8 @@ extern int riss_assumptions(const void* riss) ;
  */
 extern int riss_clauses(const void* riss) ;
 
+extern int riss_get_nvar(const void* riss);
+extern void riss_set_nvar(const void* riss, const int n);
 
 #ifdef __cplusplus
 }

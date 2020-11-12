@@ -207,6 +207,16 @@ int ipasir_simplify(void * solver)
     return riss_simplify(solver);
 }
 
+int ipasir_get_nvar(void * solver)
+{
+    return riss_get_nvar(solver);
+}
+
+void ipasir_set_nvar(void * solver, int n)
+{
+    riss_set_nvar(solver, n);
+}
+
 #ifdef __cplusplus
 }
 #endif

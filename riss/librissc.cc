@@ -332,6 +332,19 @@ extern "C" {
         return solver->solver->nClauses();
     }
 
+    int riss_get_nvar(const void* riss)
+    {
+        libriss* solver = (libriss*) riss;
+        return solver->solver->nVars();
+    }
+
+    void riss_set_nvar(const void* riss, const int n)
+    {
+        libriss* solver = (libriss*) riss;
+        for(int i=0, j=riss_get_nvar(riss)-n; i<j; ++i)
+            solver->solver->newVar();
+    }
+
 }
 
 

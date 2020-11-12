@@ -137,6 +137,9 @@ void ipasir_set_learn(void * solver, void * state, int max_length, void (*learn)
  */
 int ipasir_simplify(void * solver);
 
+int ipasir_get_nvar(void * solver);
+void ipasir_set_nvar(void * solver, int n);
+
 #ifdef __cplusplus
 }
 #endif
